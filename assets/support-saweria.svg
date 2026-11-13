@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="76" viewBox="0 0 360 76" role="img" aria-label="Support via Saweria">
+  <defs>
+    <linearGradient id="amber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffb340"/>
+      <stop offset="1" stop-color="#ff8800"/>
+    </linearGradient>
+  </defs>
+  <rect x="0.5" y="0.5" width="359" height="75" rx="16" fill="#0a0f1c" stroke="#ff8800" stroke-opacity=".45"/>
+  <g transform="translate(26,24) scale(1.15)">
+    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="url(#amber)"/>
+  </g>
+  <text x="64" y="34" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing=".5" fill="#f4f7ff">Support via Saweria</text>
+  <text x="64" y="56" font-family="Consolas, monospace" font-size="13" fill="#ffb340">saweria.co/raflialdi</text>
+</svg>

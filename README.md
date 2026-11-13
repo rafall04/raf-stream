@@ -150,8 +150,13 @@ layer: **USB** (gadget link), **LINK** (data from the RC), **VID**
 
 ## Support
 
-Free to use. If this saved you buying extra hardware, you can tip via
-[Saweria](https://saweria.co/raflialdi).
+Free to use — no paywall, no account. If the bridge saved you a
+Raspberry Pi, a tip helps fund the next hardware hack:
+
+<p align="center">
+  <a href="https://saweria.co/raflialdi"><img src="assets/support-saweria.svg"
+    alt="Support via Saweria — saweria.co/raflialdi" width="360"/></a>
+</p>
 
 ## License
 
