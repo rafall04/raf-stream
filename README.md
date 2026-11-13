@@ -11,6 +11,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-ff8800" alt="License: MIT"/></a>
   <a href="https://github.com/ophub/amlogic-s9xxx-armbian"><img src="https://img.shields.io/badge/platform-Armbian%20S905X-3d4c68" alt="Platform: Armbian S905X"/></a>
   <a href="https://saweria.co/raflialdi"><img src="https://img.shields.io/badge/saweria-tip%20jar-faa81a" alt="Saweria"/></a>
+  <a href="https://instagram.com/raflialdi204"><img src="https://img.shields.io/badge/instagram-%40raflialdi204-E4405F?logo=instagram&logoColor=white" alt="Instagram @raflialdi204"/></a>
 </p>
 
 ---
@@ -157,6 +158,8 @@ Raspberry Pi, a tip helps fund the next hardware hack:
   <a href="https://saweria.co/raflialdi"><img src="assets/support-saweria.svg"
     alt="Support via Saweria — saweria.co/raflialdi" width="360"/></a>
 </p>
+
+Follow along on Instagram — [@raflialdi204](https://instagram.com/raflialdi204).
 
 ## License
 
