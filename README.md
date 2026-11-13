@@ -37,6 +37,15 @@ the bridge only.
 | `AGENTS.md` | two-path deploy layout, verification evidence table |
 | `stb/` | install_services.sh, units, watchdog, smoke_test.sh |
 
+## Requirements
+
+- FiberHome HG680P (or another Amlogic S905X box) running
+  [ophub/amlogic-s9xxx-armbian](https://github.com/ophub/amlogic-s9xxx-armbian) —
+  its kernel ships `raw_gadget.ko`, so the USB gadget path needs no
+  out-of-tree build (tested on 6.12.112-ophub)
+- DJI RC-N1 controller + Mini 3
+- SSH access to the box
+
 ## Install (Python stack — one command)
 
 ```bash
