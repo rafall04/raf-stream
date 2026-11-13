@@ -58,20 +58,72 @@ HG680P has two USB ports with different roles — this matters:
 - **USB-1** = host-only (`xhci`) — cannot act as a gadget; the RC will
   never enumerate there
 
-## Install (Python stack — one command)
+## Install
+
+The box needs internet during install (apt packages + one binary
+download). Everything else is automated — pick the path that fits you.
+
+### Step 0 — get the box running
+
+1. Flash the Armbian image above to the HG680P (USB Burning Tool works;
+   see the ophub repo docs), boot it, connect it to your network.
+2. Find its IP address — `ip a` on the box, your router's DHCP client
+   list, or a scanner app like Fing.
+3. First SSH login is `root` / `1234` — you'll be asked to set a new
+   password right away.
+
+### Path A — install from a Windows PC (recommended)
+
+Windows can't run the installer by itself, but **Git Bash** can —
+one free installer gives you `git`, `ssh` and `scp` in a Linux-style
+terminal.
+
+1. Install [Git for Windows](https://git-scm.com/download/win)
+   (defaults are fine).
+2. Open **Git Bash**, then:
+
+   ```bash
+   git clone https://github.com/rafall04/raf-stream.git
+   cd raf-stream
+   ./deploy.sh root@<stb-ip>
+   ```
+
+   Replace `<stb-ip>` with the address from step 0, e.g.
+   `./deploy.sh root@192.168.1.20`. Type the box's SSH password when
+   asked (a few times — the script uses several connections).
+3. `deploy.sh` copies the files over SSH, runs the installer on the
+   box, then runs the smoke test. Done when you see
+   `SMOKE: SEMUA HIJAU`.
+
+### Path B — install directly on the STB
+
+If the box already has a keyboard/screen attached, or you're already
+SSH'd in:
 
 ```bash
-./deploy.sh root@<stb-ip>
+apt-get update && apt-get install -y git
+git clone https://github.com/rafall04/raf-stream.git
+cd raf-stream/stb
+bash install_services.sh
 ```
 
-Pushes the `stb/` bundle, runs `install_services.sh` remotely (apt
-deps → gadget/udev → files → units → enable), then the on-box smoke
-test. `SKIP_INSTALL=1` / `SKIP_SMOKE=1` split the stages. If a
-conflicting `dji-display-rs` service is already active on the target,
-the installer skips itself — the units `Conflict=` each other by design.
+Then verify:
 
-That's the whole flow — install is idempotent, so re-running it is the
-upgrade path too.
+```bash
+sh /root/smoke_test.sh      # expect: SMOKE: SEMUA HIJAU
+```
+
+### After install
+
+1. HDMI cable → TV/monitor. Within ~30 s the **RAF MULTIMEDIA** splash
+   appears with USB/LINK/VID/DEC indicators.
+2. Plug the RC-N1 into **USB-2** (see Wiring). The display switches to
+   LIVE at the next keyframe — typically a few seconds.
+3. Unplug the RC → back to the splash. Replug → LIVE again.
+4. Optional RTSP mirror: `rtsp://<stb-ip>:8554/dji` in VLC/ffplay.
+
+Re-running the installer is safe — it doubles as the upgrade path.
+`SKIP_INSTALL=1` / `SKIP_SMOKE=1` split `deploy.sh` stages when needed.
 
 ## License
 
