@@ -1,0 +1,13 @@
+[Unit]
+Description=DJI HDMI display (Rust build, parallel impl)
+After=dji-streamer-rs.service
+Conflicts=dji-display.service
+[Service]
+Nice=10
+ExecStart=/usr/local/bin/dji-display-rs
+Restart=always
+RestartSec=3
+StandardOutput=append:/root/display-rs.log
+StandardError=append:/root/display-rs.log
+[Install]
+WantedBy=multi-user.target

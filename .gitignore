@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+
+# Dev/research artifacts — captures, frame dumps, reference trees
+pc/frames/
+pc/*.hevc
+pc/*.raw
+pc/cap_*.jsonl
+refs/
+tmp_frames/
+*.hevc
+*.raw
+*.log
+nul
+dji_protocol/
+splash_test.png
+stb/bin/mediamtx

@@ -1,0 +1,15 @@
+#!/bin/sh
+# Roll the data plane back to the proven Python implementation.
+set -e
+echo py > /tmp/dji_impl_mode
+systemctl stop dji-mitm-rs.service 2>/dev/null || true
+systemctl stop dji-display-rs.service 2>/dev/null || true
+systemctl stop dji-bridge-rs.service dji-streamer-rs.service dji-ui-rs.service
+systemctl start dji-bridge.service dji-streamer.service \
+    dji-display.service
+systemctl enable dji-bridge.service dji-streamer.service \
+    dji-mitm.service dji-display.service 2>/dev/null || true
+systemctl disable dji-bridge-rs.service dji-streamer-rs.service dji-ui-rs.service \
+    dji-mitm-rs.service dji-display-rs.service 2>/dev/null || true
+echo "[switch-py] Python bridge+streamer+display restored (+enabled untuk boot)."
+systemctl is-active dji-bridge dji-streamer dji-display

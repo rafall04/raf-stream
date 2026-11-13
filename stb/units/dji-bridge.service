@@ -1,0 +1,18 @@
+[Unit]
+Description=DJI AOA<->TCP bridge (HG680P gadget side, :9910)
+After=dji-gadget.service
+Requires=dji-gadget.service
+StartLimitIntervalSec=0
+Conflicts=dji-bridge-rs.service
+
+[Service]
+Nice=-15
+ExecStart=/usr/bin/python3 /root/dji-stb/stb/bridge.py
+WorkingDirectory=/root/dji-stb/stb
+Restart=always
+RestartSec=2
+User=root
+Environment=AOA_DEBUG=1
+
+[Install]
+WantedBy=multi-user.target

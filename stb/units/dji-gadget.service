@@ -1,0 +1,13 @@
+[Unit]
+Description=HG680P USB gadget setup (raw_gadget, UDC check)
+DefaultDependencies=no
+After=systemd-modules-load.service
+Before=dji-bridge.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /root/dji-stb/stb/setup_gadget.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,18 @@
+[Unit]
+Description=DJI HEVC to RTSP publisher
+After=dji-mediamtx.service dji-streamer.service
+
+[Service]
+# VidServer :9990 menerima koneksi walau tak ada video (RC lepas) — ffmpeg
+# telanjang crash-loop 4500x per jam di sana ("no codec parameters"). Gate
+# file /tmp/dji_vid_pkts (streamer menulis counter tiap ~1dtk): nol koneksi
+# :9990 sampai video benar-benar mengalir — probe TCP lama memicu
+# burst-resubscribe + keyreq IDR per attach (~12dtk), yang ikut mengguncang
+# encoder tepat saat transisi handover.
+ExecStart=/bin/bash -c 'while :; do a=$(cat /tmp/dji_vid_pkts 2>/dev/null || echo 0); sleep 5; b=$(cat /tmp/dji_vid_pkts 2>/dev/null || echo 0); [ "${b:-0}" -gt "${a:-0}" ] && break; done; exec /usr/bin/ffmpeg -hide_banner -loglevel warning -fflags +genpts -probesize 10000000 -analyzeduration 2000000 -rw_timeout 20000000 -f $(cat /tmp/dji_codec 2>/dev/null || echo hevc) -i tcp://127.0.0.1:9990 -c copy -f rtsp -rtsp_transport tcp rtsp://127.0.0.1:8554/dji'
+Restart=always
+RestartSec=10
+MemoryMax=200M
+
+[Install]
+WantedBy=multi-user.target

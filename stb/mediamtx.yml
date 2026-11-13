@@ -1,0 +1,9 @@
+# Minimal mediamtx config for the DJI bridge.
+# Publisher: ffmpeg -f rtsp rtsp://127.0.0.1:8554/dji
+# Watch:     VLC/ffplay rtsp://<stb-ip>:8554/dji   (HEVC — browsers can't play it)
+# WebRTC H264/H265 playback page: http://<stb-ip>:8889/dji (only if the client
+# decodes HEVC; otherwise transcode to H.264 upstream).
+
+paths:
+  dji:
+    source: publisher

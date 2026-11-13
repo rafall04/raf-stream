@@ -1,0 +1,12 @@
+[Unit]
+Description=DJI HDMI display (gst tcpclientsrc:9990 -> kmssink)
+After=dji-streamer.service
+
+[Service]
+Nice=10
+ExecStart=/root/run_display.sh
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=MediaMTX RTSP server (DJI bridge)
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/mediamtx /root/mediamtx.yml
+Restart=always
+RestartSec=3
+MemoryMax=150M
+
+[Install]
+WantedBy=multi-user.target

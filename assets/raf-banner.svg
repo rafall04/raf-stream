@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="220" viewBox="0 0 880 220" role="img" aria-label="RAF MULTIMEDIA — DJI RC-N1 to HDMI bridge">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c1220"/>
+      <stop offset="1" stop-color="#131a2c"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffb340"/>
+      <stop offset="1" stop-color="#ff8800"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff8800" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#ff8800" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="halo" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ff8800" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#ff8800" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="880" height="220" rx="18" fill="url(#bg)"/>
+  <rect x="0.5" y="0.5" width="879" height="219" rx="17.5" fill="none" stroke="#ff8800" stroke-opacity=".25"/>
+
+  <!-- monogram tile -->
+  <circle cx="110" cy="110" r="72" fill="url(#halo)"/>
+  <rect x="48" y="48" width="124" height="124" rx="24" fill="#0a0f1c" stroke="url(#amber)" stroke-width="2.5"/>
+  <!-- drone silhouette over HDMI port -->
+  <g stroke="url(#amber)" stroke-width="3" stroke-linecap="round" fill="none">
+    <line x1="78" y1="80" x2="142" y2="80"/>
+    <line x1="86" y1="80" x2="80" y2="66"/>
+    <line x1="134" y1="80" x2="140" y2="66"/>
+    <circle cx="78" cy="62" r="10"/>
+    <circle cx="142" cy="62" r="10"/>
+    <line x1="78" y1="62" x2="142" y2="62" stroke-opacity=".35"/>
+    <rect x="96" y="80" width="28" height="16" rx="3" fill="#0a0f1c"/>
+    <circle cx="110" cy="88" r="3" fill="url(#amber)" stroke="none"/>
+    <!-- HDMI out -->
+    <line x1="110" y1="96" x2="110" y2="128"/>
+    <rect x="98" y="128" width="24" height="14" rx="2" fill="#0a0f1c"/>
+    <line x1="102" y1="135" x2="118" y2="135"/>
+  </g>
+  <!-- signal arcs -->
+  <g stroke="url(#amber)" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M186 84 a34 34 0 0 1 0 52" opacity=".9"/>
+    <path d="M200 70 a56 56 0 0 1 0 80" opacity=".55"/>
+    <path d="M214 56 a78 78 0 0 1 0 108" opacity=".3"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="250" y="104" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="52" font-weight="800" letter-spacing="3" fill="#f4f7ff">RAF</text>
+  <text x="378" y="104" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="52" font-weight="300" letter-spacing="3" fill="url(#amber)">MULTIMEDIA</text>
+  <text x="253" y="140" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="17" font-weight="400" letter-spacing="4.5" fill="#8fa0c4">DJI MINI 3 &#8226; RC-N1 &#8594; HDMI BRIDGE</text>
+  <rect x="253" y="158" width="420" height="3" rx="1.5" fill="url(#fade)"/>
+  <text x="253" y="184" font-family="Consolas, monospace" font-size="14" fill="#5d6f92">FiberHome HG680P FiberHome HG680P &#8226; full-Rust &#8226; promo loop &#8596; live video#8226; AOA bridge FiberHome HG680P &#8226; full-Rust &#8226; promo loop &#8596; live video#8226; HDMI out</text>
+
+  <!-- corner mark -->
+  <text x="852" y="196" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" letter-spacing="2" fill="#3d4c68">RAF STREAM</text>
+</svg>

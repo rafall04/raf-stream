@@ -1,0 +1,13 @@
+[Unit]
+Description=DJI standalone HEVC streamer (recipe replay -> tcp:9990)
+After=dji-bridge.service
+Conflicts=dji-streamer-rs.service
+
+[Service]
+Nice=-5
+ExecStart=/usr/bin/python3 /root/streamer.py --recipe /root/video_recipe_trim.jsonl --serve 9990 --max-gap 0.005
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,17 @@
+RAF STREAM — third-party components
+====================================
+
+This repository bundles components from DJI-Link (Apache License 2.0):
+
+- stb/aoa_device.py, stb/raw_gadget.py, stb/bridge.py — verbatim copies
+  from the DJI-Link Pi beta source tree (USB gadget / AOA device-side
+  implementation).
+- stb/bin/dji-bridge, stb/bin/dji-netctl — prebuilt aarch64 binaries from
+  the DJI-Link release (dji-link-pi.tar.gz).
+- stb/pi_src/ — C++ sources for rebuilding those binaries.
+
+Apache License 2.0 — http://www.apache.org/licenses/LICENSE-2.0
+Full text: licenses/Apache-2.0.txt
+
+DJI, Mini 3 and RC-N1 are trademarks of SZ DJI Technology Co., Ltd.
+This project is independent and unaffiliated with DJI.

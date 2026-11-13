@@ -1,0 +1,16 @@
+#!/bin/sh
+# Move the data plane to the Rust implementation. Conflicts= lines in the
+# units stop the Python counterparts automatically.
+set -e
+echo rs > /tmp/dji_impl_mode
+systemctl stop dji-mitm.service 2>/dev/null || true
+systemctl stop dji-display.service 2>/dev/null || true
+systemctl start dji-bridge-rs.service dji-streamer-rs.service dji-ui-rs.service \
+    dji-display-rs.service
+# /tmp mati saat reboot — unit yang enabled membawa pilihan impl ke boot.
+systemctl enable dji-bridge-rs.service dji-streamer-rs.service dji-ui-rs.service \
+    dji-mitm-rs.service dji-display-rs.service 2>/dev/null || true
+systemctl disable dji-bridge.service dji-streamer.service \
+    dji-mitm.service dji-display.service 2>/dev/null || true
+echo "[switch-rs] Rust bridge+streamer+ui+display up (+enabled untuk boot)."
+systemctl is-active dji-bridge-rs dji-streamer-rs dji-ui-rs dji-display-rs

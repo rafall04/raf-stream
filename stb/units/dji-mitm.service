@@ -1,0 +1,13 @@
+[Unit]
+Description=DJI phone MITM (DJI Fly via USB-A host <-> bridge :9910)
+After=dji-bridge.service
+Conflicts=dji-mitm-rs.service
+
+[Service]
+Nice=-5
+ExecStart=/usr/bin/python3 /root/mitm.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
