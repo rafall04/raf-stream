@@ -1,7 +1,8 @@
 RAF STREAM — third-party components
 ====================================
 
-This repository bundles components from DJI-Link (Apache License 2.0):
+This repository bundles components from DJI-Link (Apache License 2.0),
+https://github.com/Kolya080808/DJI-Link:
 
 - stb/aoa_device.py, stb/raw_gadget.py, stb/bridge.py — verbatim copies
   from the DJI-Link Pi beta source tree (USB gadget / AOA device-side
