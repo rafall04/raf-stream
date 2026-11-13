@@ -7,6 +7,11 @@
   <b>DJI Mini 3 live HDMI bridge on a &#36;15 Android TV box.</b><br/>
   RC-N1 &rarr; USB gadget &rarr; FiberHome HG680P &rarr; hardware decode &rarr; HDMI.
 </p>
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-ff8800" alt="License: MIT"/></a>
+  <a href="https://github.com/ophub/amlogic-s9xxx-armbian"><img src="https://img.shields.io/badge/platform-Armbian%20S905X-3d4c68" alt="Platform: Armbian S905X"/></a>
+  <a href="https://saweria.co/raflialdi"><img src="https://img.shields.io/badge/saweria-tip%20jar-faa81a" alt="Saweria"/></a>
+</p>
 
 ---
 
@@ -115,8 +120,12 @@ sh /root/smoke_test.sh      # expect: SMOKE: SEMUA HIJAU
 
 ### After install
 
-1. HDMI cable → TV/monitor. Within ~30 s the **RAF MULTIMEDIA** splash
-   appears with USB/LINK/VID/DEC indicators.
+1. HDMI cable → TV/monitor. Within ~30 s the standby splash appears —
+   this is the actual screen the display service draws:
+
+   <p align="center"><img src="assets/splash.png" width="640"
+     alt="Standby splash: RAF MULTIMEDIA, MENYAMBUNG VIDEO…, USB/LINK/VID/DEC status line"/></p>
+
 2. Plug the RC-N1 into **USB-2** (see Wiring). The display switches to
    LIVE at the next keyframe — typically a few seconds.
 3. Unplug the RC → back to the splash. Replug → LIVE again.
@@ -124,6 +133,25 @@ sh /root/smoke_test.sh      # expect: SMOKE: SEMUA HIJAU
 
 Re-running the installer is safe — it doubles as the upgrade path.
 `SKIP_INSTALL=1` / `SKIP_SMOKE=1` split `deploy.sh` stages when needed.
+
+## When something's off
+
+The splash's status line is the built-in diagnostic — each dot is one
+layer: **USB** (gadget link), **LINK** (data from the RC), **VID**
+(video packets), **DEC** (decoder). A `○` marks the stalled layer.
+
+- Screen stays on `MENYAMBUNG VIDEO…` → RC not detected: check it's in
+  **USB-2** and powered on
+- `USB○` → gadget never enumerated: wrong port or bad cable (must be
+  data-capable, not charge-only)
+- `LINK○`/`VID○` → RC connected but no traffic: replug the RC
+- Deeper check over SSH: `sh /root/smoke_test.sh` — expect
+  `SMOKE: SEMUA HIJAU`; anything red is named per-check
+
+## Support
+
+Free to use. If this saved you buying extra hardware, you can tip via
+[Saweria](https://saweria.co/raflialdi).
 
 ## License
 
