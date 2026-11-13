@@ -48,6 +48,16 @@ the bridge only.
 - DJI RC-N1 controller + Mini 3
 - SSH access to the box
 
+## Wiring
+
+HG680P has two USB ports with different roles — this matters:
+
+- **USB-2** (the flashing/OTG port) = device mode, `dwc2` → **plug the
+  RC-N1 here**: USB-A male ↔ USB-C male cable to the RC's **top** port
+  (the cradle/phone port)
+- **USB-1** = host-only (`xhci`) — cannot act as a gadget; the RC will
+  never enumerate there
+
 ## Install (Python stack — one command)
 
 ```bash
