@@ -151,15 +151,21 @@ layer: **USB** (gadget link), **LINK** (data from the RC), **VID**
 
 ## Support
 
-Free to use — no paywall, no account. If the bridge saved you a
-Raspberry Pi, a tip helps fund the next hardware hack:
+Free to use — no paywall, no account. Three ways to keep the project
+going, in order of cost:
+
+- **Star this repo** — costs nothing, tells others it works
+- **Tip via Saweria** — funds the next hardware hack if the bridge
+  saved you a Raspberry Pi
+- **Follow on Instagram** — build logs and field photos, no inbox
+  spam
 
 <p align="center">
   <a href="https://saweria.co/raflialdi"><img src="assets/support-saweria.svg"
-    alt="Support via Saweria — saweria.co/raflialdi" width="360"/></a>
+    alt="Support via Saweria — saweria.co/raflialdi" width="330"/></a>
+  <a href="https://instagram.com/raflialdi204"><img src="assets/follow-instagram.svg"
+    alt="Follow on Instagram — instagram.com/raflialdi204" width="330"/></a>
 </p>
-
-Follow along on Instagram — [@raflialdi204](https://instagram.com/raflialdi204).
 
 ## License
 
