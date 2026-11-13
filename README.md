@@ -39,10 +39,11 @@ the bridge only.
 
 ## Requirements
 
-- FiberHome HG680P (or another Amlogic S905X box) running
+- FiberHome HG680P (or another Amlogic S905X box) running Armbian from
   [ophub/amlogic-s9xxx-armbian](https://github.com/ophub/amlogic-s9xxx-armbian) —
-  its kernel ships `raw_gadget.ko`, so the USB gadget path needs no
-  out-of-tree build (tested on 6.12.112-ophub)
+  image `Armbian_26.11.0_amlogic_s905x_bookworm_6.12.112_server_*.img.gz`.
+  That kernel ships `raw_gadget.ko`, so the USB gadget path needs no
+  out-of-tree build
 - DJI RC-N1 controller + Mini 3
 - SSH access to the box
 
